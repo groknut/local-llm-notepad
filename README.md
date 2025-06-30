@@ -53,6 +53,13 @@ Need another model? Use File ▸ Select Model… and point to a different G
 | **Icon (optional)** | [Notepad icon PNG](https://upload.wikimedia.org/wikipedia/commons/c/c9/Windows_Notepad_icon.png) | Save as `Icon.png` next to the EXE and it will be used automatically |
 
 
+# Feature Details
+
+#Portable One‑File Build
+Images/Screenshot1.png
+
+
+
 # (Optional) Building Your Own Portable EXE
 ## 1. Clone
 
@@ -71,4 +78,5 @@ $ pip install -r requirements.txt
 $ pyinstaller --onefile --noconsole --additional-hooks-dir=. main.py
 
 ## 4. Grab dist/Local_LLM_Notepad.exe (≈45 MB)
+
 
