@@ -1,5 +1,5 @@
-# Local_LLM_Notepad
-Run a modern LLM anywhere with a double‑click. 
+# Local LLM Notepad
+Run a modern LLM anywhere locally with a double‑click. 
 
 No installation, no internet, no API, no admin rights required. 
 
