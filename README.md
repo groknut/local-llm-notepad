@@ -55,7 +55,7 @@ Need another model? Use File ▸ Select Model… and point to a different G
 
 # (Optional) Building Your Own Portable EXE
 ## 1. Clone
-$ git clone https://github.com/yourname/Local_LLM_Notepad.git
+$ git clone https://github.com/runzhouye/Local_LLM_Notepad.git
 $ cd Local_LLM_Notepad
 
 ## 2. Create env & install deps
