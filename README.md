@@ -8,7 +8,6 @@ Local LLM Notepad is an open-source, offline plug-and-play app for running local
 
 ![Portable One‑File Build](Images/Screenshot1.png)
 
-![Portable One‑File Build](Images/combined.gif)
 
 # Why you’ll love it
 
