@@ -78,16 +78,25 @@ Ctrl + click any under‑lined word to open a side window with every single 
 
 ### Ctrl + Z to stop LLM generation
 
+![CtrlZ](Images/CtrlZ.gif)
+
 ### Ctrl + F to find in chat history
+
+![CtrlF](Images/CtrlF.gif)
 
 ### Ctrl + X to clear chat history
 
+
+
 ### Ctrl + P to edit system prompt anytime
+
+![change_syst_prompt](Images/change_syst_prompt.gif)
 
 ### Ctrl + scroll to change font size
 
 ### File ▸ Save/Load chat history
 
+![Load_chat](Images/Load_chat.gif)
 
 
 # (Optional) Building Your Own Portable EXE
