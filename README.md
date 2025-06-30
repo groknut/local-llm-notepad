@@ -1,9 +1,10 @@
 # Local LLM Notepad
-Run a modern LLM anywhere locally with a double‑click. 
+Plug a USB drive and run a modern LLM on any PC **locally** with a double‑click. 
 
-No installation, no internet, no API, no GPU, no admin rights required. 
+***No installation, no internet, no API, no Cloud computing, no GPU, no admin rights required.***
 
-Local_LLM_Notepad is an open-source, offline plug-and-play app for running local large-language model. Drop the single bundled .exe onto a USB stick, walk up to any computer, and start chatting, brainstorming, or drafting documents. 
+Local LLM Notepad is an open-source, offline plug-and-play app for running local large-language models. Drop the single bundled .exe onto a USB stick, walk up to any computer, and start chatting, brainstorming, or drafting documents. 
+
 
 ![Portable One‑File Build](Images/Screenshot1.png)
 
@@ -75,6 +76,19 @@ Ctrl + click any under‑lined word to open a side window with every single 
 ### Ctrl + S to Send text to LLM
 
 ![CtrlS](Images/CtrlS.gif)
+
+### Ctrl + Z to stop LLM generation
+
+### Ctrl + F to find in chat history
+
+### Ctrl + X to clear chat history
+
+### Ctrl + P to edit system prompt anytime
+
+### Ctrl + scroll to change font size
+
+### File ▸ Save/Load chat history
+
 
 
 # (Optional) Building Your Own Portable EXE
