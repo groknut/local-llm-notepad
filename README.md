@@ -40,7 +40,7 @@ Copy the EXE and a compatible GGUF model (e.g. gemma-3-1b-it-Q4_K_M.gguf) onto 
 
 Double‑click the EXE on any Windows computer. First launch caches the model into RAM; subsequent prompts stream instantly.
 
-Need another model? Use File ▸ Select Model… and point to a different GGUF.(Feel free to keep multiple models in the same folder—LLM Notepad remembers your last pick.)
+Need another model? Use File ▸ Select Model… and point to a different GGUF.
 
 
 
