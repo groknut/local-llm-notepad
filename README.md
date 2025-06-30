@@ -9,6 +9,8 @@ Local LLM Notepad is an open-source, offline plug-and-play app for running local
 ![Portable One‑File Build](Images/Screenshot1.png)
 
 
+![combined](Images/combined.gif)
+
 # Why you’ll love it
 
 🔌 Portable
@@ -86,13 +88,11 @@ Ctrl + click any under‑lined word to open a side window with every single 
 
 ### Ctrl + X to clear chat history
 
-
+![CtrlX](Images/CtrlX.gif)
 
 ### Ctrl + P to edit system prompt anytime
 
 ![change_syst_prompt](Images/change_syst_prompt.gif)
-
-### Ctrl + scroll to change font size
 
 ### File ▸ Save/Load chat history
 
