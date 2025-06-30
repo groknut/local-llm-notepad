@@ -55,15 +55,20 @@ Need another model? Use File ▸ Select Model… and point to a different G
 
 # (Optional) Building Your Own Portable EXE
 ## 1. Clone
+
 $ git clone https://github.com/runzhouye/Local_LLM_Notepad.git
+
 $ cd Local_LLM_Notepad
 
 ## 2. Create env & install deps
+
 $ python -m venv .venv && .\.venv\Scripts\activate
+
 $ pip install -r requirements.txt
 
 ## 3. Bundle everything
-$ pyinstaller --onefile --noconsole main.py
+
+$ pyinstaller --onefile --noconsole --additional-hooks-dir=. main.py
 
 ## 4. Grab dist/Local_LLM_Notepad.exe (≈45 MB)
 
