@@ -6,6 +6,7 @@ import queue
 import re
 import threading
 from typing import List, Tuple
+import webbrowser
 
 import tkinter as tk
 import tkinter.font as tkfont
@@ -19,7 +20,7 @@ __all__ = ["ChatGUI", "run_app"]
 class ChatGUI:
     def __init__(self, root: tk.Tk):
         self.root = root
-        root.title("Notepad")
+        root.title("Local LLM Notepad")
         root.configure(bg="white")
 
         icon_path = "Icon.png"
@@ -66,7 +67,7 @@ class ChatGUI:
 
         help_menu = tk.Menu(menubar, tearoff=0)
         help_menu.add_command(label="About", command=self.show_about)
-        menubar.add_cascade(label="Help", menu=help_menu)
+        menubar.add_cascade(label="About", menu=help_menu)
         root.config(menu=menubar)
 
         # ─────────────────── Layout ───────────────────
@@ -337,9 +338,48 @@ class ChatGUI:
         self._refresh_bold_font()
 
     def show_about(self):
-        messagebox.showinfo(
-            "About", "Smart notepad\nVersion 1.0\nBuilt with tkinter and llama-cpp-python"
+        # Create a small About window
+        win = tk.Toplevel(self.root)
+        win.title("About")
+        win.transient(self.root)
+        win.resizable(False, False)
+
+        # Main text
+        text = (
+            "Local LLM Notepad\n"
+            "Version 1.0.0\n"
+            "Built with tkinter and llama-cpp-python\n\n"
+            "Local LLM Notepad (c) by Run Zhou Ye\n\n"
+            "Licensed under a Creative Commons\n"
+            "Attribution-NonCommercial 4.0 International License.\n\n"
+            "You should have received a copy of the license\n"
+            "along with this work. If not, see:"
         )
+        lbl = tk.Label(win, text=text, justify=tk.LEFT, bg="white")
+        lbl.pack(padx=15, pady=(15, 5), anchor="w")
+
+        # Clickable link
+        link = "https://creativecommons.org/licenses/by-nc/4.0/"
+        link_lbl = tk.Label(
+            win,
+            text=link,
+            fg="blue",
+            cursor="hand2",
+            underline=True,
+            bg="white",
+        )
+        link_lbl.pack(padx=15, pady=(0, 15), anchor="w")
+        link_lbl.bind(
+            "<Button-1>",
+            lambda e, url=link: webbrowser.open_new(url)
+        )
+
+        # OK button to close
+        btn = tk.Button(win, text="OK", command=win.destroy)
+        btn.pack(pady=(0, 15))
+
+        # Center it over the main window
+        self._center_window(win)
 
     # ─────────────────── Chat actions ───────────────────
     def on_send(self):
