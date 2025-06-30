@@ -1,7 +1,7 @@
 # Local LLM Notepad
 Run a modern LLM anywhere locally with a double‑click. 
 
-No installation, no internet, no API, no admin rights required. 
+No installation, no internet, no API, no GPU, no admin rights required. 
 
 Local_LLM_Notepad is an open-source, offline plug-and-play app for running local large-language model. Drop the single bundled .exe onto a USB stick, walk up to any computer, and start chatting, brainstorming, or drafting documents. 
 
