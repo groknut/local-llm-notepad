@@ -5,6 +5,10 @@ No installation, no internet, no API, no GPU, no admin rights required.
 
 Local_LLM_Notepad is an open-source, offline plug-and-play app for running local large-language model. Drop the single bundled .exe onto a USB stick, walk up to any computer, and start chatting, brainstorming, or drafting documents. 
 
+![Portable One‑File Build](Images/Screenshot1.png)
+
+![Portable One‑File Build](Images/combined.gif)
+
 # Why you’ll love it
 
 🔌 Portable
@@ -29,7 +33,7 @@ CPU‑only by default for max compatibility.
 
 🎹 Hot‑keys
 
-Ctrl + S to send, Ctrl + Z to stop, Ctrl + F to find, Ctrl + Mouse‑Wheel zoom, etc.
+Ctrl + S to send, Ctrl + Z to stop, Ctrl + F to find, Ctrl + X to clear chat history, Ctrl + Mouse‑Wheel zoom, etc.
 
 
 # Quick Start
@@ -49,34 +53,47 @@ Need another model? Use File ▸ Select Model… and point to a different G
 | File | Link | Notes |
 |------|------|-------|
 | **Local_LLM_Notepad-portable.exe** | [Direct download (v1.0.0)](https://github.com/runzhouye/Local_LLM_Notepad/releases/download/v1.0.0/Local_LLM_Notepad_v1.0.0.exe) | ~45 MB, contains everything needed to run LLM on Windows computer |
-| **gemma-3-1b-it-Q4_K_M.gguf** | [Hugging Face](https://huggingface.co/ggml-org/gemma-3-1b-it-GGUF/tree/main) | Fast CPU model (~0.8 GB) we recommend for first-time users |
+| **gemma-3-1b-it-Q4_K_M.gguf** | [Hugging Face](https://huggingface.co/ggml-org/gemma-3-1b-it-GGUF/tree/main) | Fast CPU model (~0.8 GB) we recommend for first-time users. Achieves ~20 tokens/second on an i7-10750H CPU |
 | **Icon (optional)** | [Notepad icon PNG](https://upload.wikimedia.org/wikipedia/commons/c/c9/Windows_Notepad_icon.png) | Save as `Icon.png` next to the EXE and it will be used automatically |
 
 
 # Feature Details
 
-#Portable One‑File Build
-Images/Screenshot1.png
+### Portable One‑File Build
 
+![Portable One‑File Build](Images/Screenshot1.png)
+
+
+### Automated Source Highlighting (Ctrl + click)
+
+Every word, number you used in the prompt is bold‑underlined in the LLM answer.  
+
+Ctrl + click any under‑lined word to open a side window with every single prompt that contained it—great for tracing sources.
+
+![bold_text_demo](Images/bold_text_demo.gif)
+
+### Ctrl + S to Send text to LLM
+
+![CtrlS](Images/CtrlS.gif)
 
 
 # (Optional) Building Your Own Portable EXE
-## 1. Clone
+### 1. Clone
 
 $ git clone https://github.com/runzhouye/Local_LLM_Notepad.git
 
 $ cd Local_LLM_Notepad
 
-## 2. Create env & install deps
+### 2. Create env & install deps
 
 $ python -m venv .venv && .\.venv\Scripts\activate
 
 $ pip install -r requirements.txt
 
-## 3. Bundle everything
+### 3. Bundle everything
 
 $ pyinstaller --onefile --noconsole --additional-hooks-dir=. main.py
 
-## 4. Grab dist/Local_LLM_Notepad.exe (≈45 MB)
+### 4. Grab dist/Local_LLM_Notepad.exe (≈45 MB)
 
 
