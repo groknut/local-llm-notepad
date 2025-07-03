@@ -1,5 +1,4 @@
-llama-cpp-python>=0.5.0,<1.0
+llama-cpp-python
 
-llama_cpp_agent>=0.3.0,<1.0
+llama_cpp_agent
 
-pyinstaller>=6.0,<7.0
