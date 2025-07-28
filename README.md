@@ -1,121 +1,87 @@
-# Local LLM Notepad
-Plug a USB drive and run a modern LLM on any PC **locally** with a double‑click. 
 
-***No installation, no internet, no API, no Cloud computing, no GPU, no admin rights required.***
+## local-llm-notepad
+is an open-source, offline plug-and-play app for running local large-language models. 
 
-Local LLM Notepad is an open-source, offline plug-and-play app for running local large-language models. Drop the single bundled .exe onto a USB stick, walk up to any computer, and start chatting, brainstorming, or drafting documents. 
+**Changes Made:**
+- Added saving the path to the last used model and the system prompt
+- Updated `requirements.txt`
+- Added a mention of the gemma model availability in `src`
+- Rewrote all bindings and added the ability to override them via `settings.json`
+- Implemented `uv` support in a separate branch
+- Updated the `.exe` file in the release
+- Added program compilation via `nuitka`
+- Updated the `README`
+- Uploaded new build files for the `main` and `uv` branches
+
+![main_img](img/main.gif)
+
+| File | Link | Notes |
+|-------|------|------|
+| `local-llm-notepad.exe` | [Download](https://github.com/yoken-do/local-llm-notepad/releases/tag/v1.0.2) | ~25 MB, contains everything needed to run LLM on Windows computer |
+| `gemma-3-1b-it-Q4_K_M.gguf` | [Download](https://huggingface.co/ggml-org/gemma-3-1b-it-GGUF/tree/main) | Fast CPU model (~0.8 GB) we recommend for first-time users. Achieves ~20 tokens/second on an i7-10750H CPU |
 
 
-![Portable One‑File Build](Images/Screenshot1.png)
+## Why you’ll love it
 
-![combined_gif](Images/Combined_gif.gif)
-
-
-# Why you’ll love it
-
-🔌 Portable
+### 🔌 Portable
 
 Drop the one‑file EXE and your .gguf model onto a flash drive; run on any Windows PC without admin rights.
 
-🪶 Clean UI
+### 🪶 Clean UI
 
 Two‑pane layout: type prompts below, watch token‑streamed answers above—no extra chrome.
 
-🔍 Source‑word under‑lining
-
-Every word or number you wrote in your prompt is automatically bold‑underlined in the model’s reply. Ctrl+left click on them to view them in a separate window. Handy for fact‑checking summaries, tables, or data extractions.
-
-💾 Save/Load chats
+### 💾 Save/Load chats
 
 One‑click JSON export keeps conversations with the model portable alongside the EXE.
 
-⚡ Llama.cpp inside
+### ⚡ Llama.cpp inside
 
 CPU‑only by default for max compatibility.
 
-🎹 Hot‑keys
+### 🎹 Hot‑keys (Optional)
 
-Ctrl + S to send, Ctrl + Z to stop, Ctrl + F to find, Ctrl + X to clear chat history, Ctrl + Mouse‑Wheel zoom, etc.
-
-
-# Quick Start
-
-Download Local_LLM_Notepad-portable.exe from the Releases page.
-
-Copy the EXE and a compatible GGUF model (e.g. gemma-3-1b-it-Q4_K_M.gguf) onto your USB.
-
-Double‑click the EXE on any Windows computer. First launch caches the model into RAM; subsequent prompts stream instantly.
-
-Need another model? Use File ▸ Select Model… and point to a different GGUF.
+| Keyboard shortcuts | Action |
+|------|------|
+| `Shift` + `Return` | send |
+| `Ctrl` + `Z` | stop |
+| `Ctrl` + `F` | find |
+| `Ctrl` + `X` | clear chat history |
+| `Ctrl` + `Mouse-Wheel` | zoom |
+| `Ctrl` + `P` | edit system prompt |
 
 
-# Download links:
+## Run app from source code
+The process is identical to the [`main`](https://github.com/runzhouye/Local_LLM_Notepad) repository (only directory names and library versions in `requirements.txt` differ).
 
+If you're using `uv`, switch to the [`branch`](https://github.com/yoken-do/local-llm-notepad/tree/uv)
 
-| File | Link | Notes |
-|------|------|-------|
-| **Local_LLM_Notepad-portable.exe** | [Direct download (v1.0.1)](https://github.com/runzhouye/Local_LLM_Notepad/releases/tag/v1.0.1) | ~45 MB, contains everything needed to run LLM on Windows computer |
-| **gemma-3-1b-it-Q4_K_M.gguf** | [Hugging Face](https://huggingface.co/ggml-org/gemma-3-1b-it-GGUF/tree/main) | Fast CPU model (~0.8 GB) we recommend for first-time users. Achieves ~20 tokens/second on an i7-10750H CPU  ![HF_screenshot](Images/HF_screenshot_2.png)|
-| **Icon (optional)** | [Notepad icon PNG](https://upload.wikimedia.org/wikipedia/commons/c/c9/Windows_Notepad_icon.png) | Save as `Icon.png` next to the EXE and it will be used automatically |
+### 1. Clone repository
+```bash
+git clone https://github.com/yoken-do/local-llm-notepad.git
+cd local-llm-notepad
+```
 
+### 2. Create environment
+```bash
+python -m venv .venv
+```
+### 3. Activate environment
+```bash
+.venv\Scripts\activate
+```
+### 4. Install dependecies and go to `src` directory
+```bash
+pip install -r requirements.txt
+cd src
+```
 
-# Feature Details
+### 5. Compile
+```bash
+nuitka --standalone --enable-plugin=tk-inter --windows-console-mode=disable --onefile --output-filename=local-llm-notepad.exe main.py
+```
 
-### Portable One‑File Build
-
-![Portable One‑File Build](Images/Screenshot1.png)
-
-
-### Automated Source Highlighting (Ctrl + click)
-
-Every word, number you used in the prompt is bold‑underlined in the LLM answer.  
-
-Ctrl + click any under‑lined word to open a side window with every single prompt that contained it—great for tracing sources.
-
-![bold_text_demo](Images/bold_text_demo.gif)
-
-### Ctrl + S to Send text to LLM
-
-![CtrlS](Images/CtrlS.gif)
-
-### Ctrl + Z to stop LLM generation
-
-![CtrlZ](Images/CtrlZ.gif)
-
-### Ctrl + F to find in chat history
-
-![CtrlF](Images/CtrlF.gif)
-
-### Ctrl + X to clear chat history
-
-![CtrlX](Images/CtrlX.gif)
-
-### Ctrl + P to edit system prompt anytime
-
-![change_syst_prompt](Images/change_syst_prompt.gif)
-
-### File ▸ Save/Load chat history
-
-![Load_chat](Images/Load_chat.gif)
-
-
-# (Optional) Building Your Own Portable EXE
-### 1. Clone
-
-$ git clone https://github.com/runzhouye/Local_LLM_Notepad.git
-
-$ cd Local_LLM_Notepad
-
-### 2. Create env & install deps
-
-$ python -m venv .venv && .\.venv\Scripts\activate
-
-$ pip install -r requirements.txt
-
-### 3. Bundle everything
-
-$ pyinstaller --onefile --noconsole --additional-hooks-dir=. main.py
-
-### 4. Grab dist/Local_LLM_Notepad.exe (≈45 MB)
-
-
+### 6. Add [`gemma-3-1b-it-Q4_K_M.gguf`](https://huggingface.co/ggml-org/gemma-3-1b-it-GGUF/tree/main) (the default model) and run app
+```bash
+local-llm-notepad.exe
+```
