@@ -17,7 +17,7 @@ is an open-source, offline plug-and-play app for running local large-language mo
 
 | File | Link | Notes |
 |-------|------|------|
-| `local-llm-notepad.exe` | [Download](https://github.com/yoken-do/local-llm-notepad/releases/tag/v1.0.2) | ~25 MB, contains everything needed to run LLM on Windows computer |
+| `local-llm-notepad.exe` | [Download](https://github.com/groknut/local-llm-notepad/releases/tag/v1.0.2) | ~25 MB, contains everything needed to run LLM on Windows computer |
 | `gemma-3-1b-it-Q4_K_M.gguf` | [Download](https://huggingface.co/ggml-org/gemma-3-1b-it-GGUF/tree/main) | Fast CPU model (~0.8 GB) we recommend for first-time users. Achieves ~20 tokens/second on an i7-10750H CPU |
 
 
@@ -54,11 +54,11 @@ CPU‑only by default for max compatibility.
 ## Run app from source code
 The process is identical to the [`main`](https://github.com/runzhouye/Local_LLM_Notepad) repository (only directory names and library versions in `requirements.txt` differ).
 
-If you're using `uv`, switch to the [`branch`](https://github.com/yoken-do/local-llm-notepad/tree/uv)
+If you're using `uv`, switch to the [`branch`](https://github.com/groknut/local-llm-notepad/tree/uv)
 
 ### 1. Clone repository
 ```bash
-git clone https://github.com/yoken-do/local-llm-notepad.git
+git clone https://github.com/groknut/local-llm-notepad.git
 cd local-llm-notepad
 ```
 

@@ -340,7 +340,7 @@ class ChatGUI:
             "local-llm-notepad\n"
             "fork of the 'Local LLM Notepad' project\n"
             "Version: 0.0.1\n"
-            "Fork author: yo (Github: yoken-do)\n"
+            "Fork author: yo (Github: groknut)\n"
             "Built with tkinter and llama-cpp-python\n\n"
         )
         lbl = tk.Label(win, text=text, justify=tk.LEFT, bg="white")
